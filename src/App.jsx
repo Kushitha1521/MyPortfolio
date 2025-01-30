@@ -44,13 +44,13 @@ const App = () => {
       {/* Introduction Section */}
       <section id="home" className="pt-20 container mx-auto text-center">
         <img 
-          src="/api/placeholder/300/300" 
+          src="kushitha.jpg" 
           alt="Profile" 
           className="mx-auto rounded-full w-48 h-48 object-cover mb-4 
                      border-4 border-blue-600 shadow-xl"
         />
         <h1 className="text-4xl font-bold mb-2 text-blue-400">
-          Your Name
+          KUSHITHA LAKSHITHA
         </h1>
         <p className="text-xl text-gray-400">
           Software Developer | Web Developer | Tech Enthusiast
