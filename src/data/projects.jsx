@@ -2,28 +2,28 @@ export const projects = [
     {
       name: "Web Development Project",
       description: "Full-stack web application with modern technologies",
-      image: "/api/placeholder/400/300",
+      image: "https://coding-boot-camp.github.io/full-stack/static/71297da067a2919b4e96ef0b7cfc7ba5/c1b63/01-team-collab.png",
       technologies: ["React", "Tailwind", "Node.js"],
       category: "web"
     },
     {
       name: "Data Science Project", 
       description: "Machine learning model for predictive analytics",
-      image: "/api/placeholder/400/300",
+      image: "https://assets.skyfilabs.com/images/blog/free-data-science-final-year-projects.webp",
       technologies: ["Python", "Django", "Machine Learning"],
       category: "data"
     },
     {
       name: "Mobile App", 
       description: "Cross-platform mobile application with React Native",
-      image: "/api/placeholder/400/300",
+      image: "https://www.softwareworld.co/blogimage/2021/04/Teamwork-Projects-best-Project-Management-App.png",
       technologies: ["React Native", "Firebase", "Redux"],
       category: "mobile"
     },
     {
       name: "UI/UX Design", 
       description: "User interface design for e-commerce platform",
-      image: "/api/placeholder/400/300",
+      image: "https://careercollegeindia.com/blog/wp-content/uploads/2024/09/UI-UX-Designer-scaled.jpg",
       technologies: ["Figma", "Adobe XD", "UI/UX"],
       category: "design"
     }
