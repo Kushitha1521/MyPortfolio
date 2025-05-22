@@ -16,7 +16,7 @@ export const projects = [
     {
       name: "Mobile App", 
       description: "Cross-platform mobile application with React Native",
-      image: "https://www.softwareworld.co/blogimage/2021/04/Teamwork-Projects-best-Project-Management-App.png",
+      image: "https://img.freepik.com/free-vector/course-app-interface-concept_23-2148670236.jpg",
       technologies: ["React Native", "Firebase", "Redux"],
       category: "mobile"
     },
