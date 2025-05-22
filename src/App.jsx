@@ -684,10 +684,10 @@ const App = () => {
             
             <div className="mt-8 md:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
               {[
-                { platform: 'GitHub', url: 'https://github.com/kushitha-lakshitha', label: 'Visit my GitHub profile' },
+                { platform: 'GitHub', url: 'https://github.com/kushitha1521', label: 'Visit my GitHub profile' },
                 { platform: 'LinkedIn', url: 'https://linkedin.com/in/kushitha-lakshitha', label: 'Connect on LinkedIn' },
-                { platform: 'Twitter', url: 'https://twitter.com/kushitha_dev', label: 'Follow me on Twitter' },
-                { platform: 'Email', url: 'mailto:kushitha@example.com', label: 'Send me an email' }
+                // { platform: 'Twitter', url: 'https://twitter.com/kushitha_dev', label: 'Follow me on Twitter' },
+                { platform: 'Email', url: 'mailto:kushithalakshitha@gmail.com', label: 'Send me an email' }
               ].map((social, index) => (
                 <a 
                   key={social.platform}
@@ -723,9 +723,9 @@ const App = () => {
         <div className="container mx-auto text-center relative z-10 max-w-7xl px-4 sm:px-6">
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-3 sm:mb-4">
             {[
-              { platform: 'GitHub', url: 'https://github.com/kushitha-lakshitha' },
-              { platform: 'LinkedIn', url: 'https://linkedin.com/in/kushitha-lakshitha' },
-              { platform: 'Email', url: 'mailto:kushitha@example.com' }
+              // { platform: 'GitHub', url: 'https://github.com/kushitha-lakshitha' },
+              // { platform: 'LinkedIn', url: 'https://linkedin.com/in/kushitha-lakshitha' },
+              // { platform: 'Email', url: 'mailto:kushitha@example.com' }
             ].map((social, index) => (
               <a 
                 key={social.platform} 
