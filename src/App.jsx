@@ -740,7 +740,7 @@ const App = () => {
               </a>
             ))}
           </div>
-          <p className="text-xs sm:text-sm text-gray-500">&copy; 2024 Kushitha Lakshitha. All Rights Reserved.</p>
+          <p className="text-xs sm:text-sm text-gray-500">&copy; 2024 <a href='https://linkedin.com/in/kushitha-lakshitha'>Kushitha Lakshitha </a>. All Rights Reserved.</p>
         </div>
       </footer>
       
