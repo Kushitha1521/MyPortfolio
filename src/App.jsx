@@ -42,8 +42,8 @@ const App = () => {
     // Open Graph meta tags
     updateMetaTag('og:title', 'Kushitha Lakshitha - Software Developer & Web Developer Portfolio', true);
     updateMetaTag('og:description', 'Professional software developer specializing in web development, mobile apps, and UI/UX design. View my portfolio of projects and technical skills.', true);
-    updateMetaTag('og:image', 'https://kushitha-portfolio.com/kushitha1.JPG', true); // Replace with actual URL
-    updateMetaTag('og:url', 'https://kushitha-portfolio.com', true); // Replace with actual URL
+    updateMetaTag('og:image', 'https://kushithalakshitha.vercel.app/kushitha1.JPG', true); // Replace with actual URL
+    updateMetaTag('og:url', 'https://kushithalakshitha.vercel.app/', true); // Replace with actual URL
     updateMetaTag('og:type', 'website', true);
     updateMetaTag('og:site_name', 'Kushitha Lakshitha Portfolio', true);
 
@@ -51,7 +51,7 @@ const App = () => {
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', 'Kushitha Lakshitha - Software Developer & Web Developer Portfolio');
     updateMetaTag('twitter:description', 'Professional software developer specializing in web development, mobile apps, and UI/UX design. View my portfolio of projects and technical skills.');
-    updateMetaTag('twitter:image', 'https://kushitha-portfolio.com/kushitha1.JPG'); // Replace with actual URL
+    updateMetaTag('twitter:image', 'https://kushithalakshitha.vercel.app/kushitha1.JPG'); // Replace with actual URL
 
     // Additional SEO meta tags
     updateMetaTag('viewport', 'width=device-width, initial-scale=1.0');
@@ -64,7 +64,7 @@ const App = () => {
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', 'https://kushitha-portfolio.com'); // Replace with actual URL
+    canonicalLink.setAttribute('href', 'https://kushithalakshitha.vercel.app/'); // Replace with actual URL
 
     // Add JSON-LD structured data
     let structuredDataScript = document.querySelector('#structured-data');
@@ -77,21 +77,21 @@ const App = () => {
     
     const structuredData = {
       "@context": "https://schema.org",
-      "@type": "Person",
+      "@type": "Undergraduate",
       "name": "Kushitha Lakshitha",
-      "jobTitle": "Software Developer",
+      "jobTitle": "Frontend Developer",
       "description": "Professional software developer specializing in web development and mobile applications",
-      "url": "https://kushitha-portfolio.com", // Replace with actual URL
-      "image": "https://kushitha-portfolio.com/kushitha1.JPG", // Replace with actual URL
+      "url": "https://kushithalakshitha.vercel.app/", // Replace with actual URL
+      "image": "https://kushithalakshitha.vercel.app/kushitha1.JPG", // Replace with actual URL
       "sameAs": [
-        "https://github.com/kushitha-lakshitha", // Replace with actual URLs
+        "https://github.com/kushitha1521", // Replace with actual URLs
         "https://linkedin.com/in/kushitha-lakshitha"
       ],
       "knowsAbout": ["JavaScript", "React", "Web Development", "Mobile Development", "UI/UX Design"],
-      "alumniOf": "University Name", // Add if applicable
+      "alumniOf": "University of Kelaniya", // Add if applicable
       "worksFor": {
         "@type": "Organization",
-        "name": "Current Company" // Add if applicable
+        "name": "AWS Cloud Club" // Add if applicable
       }
     };
     
