@@ -434,7 +434,8 @@ const App = () => {
                 { id: 'web', label: 'Web' },
                 { id: 'data', label: 'Data' },
                 { id: 'mobile', label: 'Mobile' },
-                { id: 'design', label: 'UI/UX' }
+                { id: 'IOT', label: 'IOT' },
+                { id: 'Desktop Application', label: 'Desktop Application' }
               ].map((tab) => (
                 <button
                   key={tab.id}

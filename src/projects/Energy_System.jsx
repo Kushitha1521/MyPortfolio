@@ -2,30 +2,29 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 
-const EV_Project_00 = () => {
+const Energy_System = () => {
 
   return (
     <div className="min-h-screen bg-black text-white p-6">
       <div className="max-w-4xl mx-auto">
         <Link to="/" className="text-sm text-blue-300 hover:underline mb-4 inline-block">← Back</Link>
         <div className="bg-gray-900/70 backdrop-blur-sm rounded-lg p-6 shadow-xl">
-          <h1 className="text-2xl sm:text-3xl font-bold text-blue-400 mb-3">{projects[0].name}</h1>
-          <p className="text-gray-300 mb-4">{projects[0].description}</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-blue-400 mb-3">{projects[1].name}</h1>
+          <p className="text-gray-300 mb-4">{projects[1].description}</p>
           <div className="overflow-hidden rounded-lg mb-4">
-            <img src={projects[0].image} alt={`${projects[0].name} screenshot`} className="w-full object-cover rounded-lg" />
+            <img src={projects[1].image} alt={`${projects[1].name} screenshot`} className="w-full object-cover rounded-lg" />
           </div>
-          
           <h3 className="text-blue-300 font-semibold mb-2">Technologies</h3>
           <div className="flex flex-wrap gap-2 mb-4">
-            {projects[0].technologies.map((t, i) => (
+            {projects[1].technologies.map((t, i) => (
               <span key={i} className="bg-blue-900/70 text-blue-300 px-2 py-1 rounded-full text-xs">{t}</span>
             ))}
           </div>
-          <p className="text-sm text-gray-400">Category: <span className="text-blue-300">{projects[0].category}</span></p>
+          <p className="text-sm text-gray-400">Category: <span className="text-blue-300">{projects[1].category}</span></p>
         </div>
       </div>
     </div>
   )
 }
 
-export default EV_Project_00
+export default Energy_System
