@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { projects } from './data/projects';
 import { skills } from './data/skills';
 import { experiences } from './data/experiences';
@@ -463,31 +464,33 @@ const App = () => {
                   }`}
                   style={{ transitionDelay: `${index * 0.1}s` }}
                 >
-                  <div className="overflow-hidden rounded-lg mb-4">
-                    <img 
-                      src={project.image} 
-                      alt={`${project.name} project screenshot`}
-                      className="w-full h-40 sm:h-48 md:h-56 object-cover rounded-lg transition-transform duration-500 hover:scale-110"
-                      loading="lazy"
-                      width="400"
-                      height="224"
-                    />
-                  </div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-blue-400">
-                    {project.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex} 
-                        className="bg-blue-900/70 text-blue-300 px-2 py-1 rounded-full text-xs sm:text-sm hover:bg-blue-700 transition-colors"
-                        role="listitem"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <Link to={`/projects/${project.slug}`} className="block focus:outline-none focus:ring-2 focus:ring-blue-400 rounded">
+                    <div className="overflow-hidden rounded-lg mb-4">
+                      <img 
+                        src={project.image} 
+                        alt={`${project.name} project screenshot`}
+                        className="w-full h-40 sm:h-48 md:h-56 object-cover rounded-lg transition-transform duration-500 hover:scale-110"
+                        loading="lazy"
+                        width="400"
+                        height="224"
+                      />
+                    </div>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-blue-400">
+                      {project.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex} 
+                          className="bg-blue-900/70 text-blue-300 px-2 py-1 rounded-full text-xs sm:text-sm hover:bg-blue-700 transition-colors"
+                          role="listitem"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </Link>
                 </article>
               ))}
             </div>
