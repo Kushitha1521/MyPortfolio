@@ -379,7 +379,7 @@ const App = () => {
             className={`transition-all duration-1000 transform relative z-10 ${isVisible['home'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <img 
-              src="kushitha1.JPG" 
+              src="kushitha2.jpg" 
               alt="Kushitha Lakshitha - Professional profile photo" 
               className="mx-auto rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-cover mb-4 border-4 border-blue-600 shadow-xl hover:scale-105 transition-transform duration-300"
               loading="eager"
