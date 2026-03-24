@@ -390,7 +390,7 @@ const App = () => {
               KUSHITHA LAKSHITHA
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-400 h-8">
-              <TypewriterText text="Software Developer | Web Developer | Tech Enthusiast" />
+              <TypewriterText text="Embedded Systems | IoT  | Web Developer | Tech Enthusiast | Cybersecurity Enthusiast" />
             </p>
             <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <button 
