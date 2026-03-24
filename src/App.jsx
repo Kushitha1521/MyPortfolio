@@ -43,7 +43,7 @@ const App = () => {
     // Open Graph meta tags
     updateMetaTag('og:title', 'Kushitha Lakshitha - Software Developer & Web Developer Portfolio', true);
     updateMetaTag('og:description', 'Professional software developer specializing in web development, mobile apps, and UI/UX design. View my portfolio of projects and technical skills.', true);
-    updateMetaTag('og:image', 'https://kushithalakshitha.vercel.app/kushitha1.JPG', true); // Replace with actual URL
+    updateMetaTag('og:image', 'https://kushithalakshitha.vercel.app/kushitha2.jpg', true); // Replace with actual URL
     updateMetaTag('og:url', 'https://kushithalakshitha.vercel.app/', true); // Replace with actual URL
     updateMetaTag('og:type', 'website', true);
     updateMetaTag('og:site_name', 'Kushitha Lakshitha Portfolio', true);
@@ -52,7 +52,7 @@ const App = () => {
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', 'Kushitha Lakshitha - Software Developer & Web Developer Portfolio');
     updateMetaTag('twitter:description', 'Professional software developer specializing in web development, mobile apps, and UI/UX design. View my portfolio of projects and technical skills.');
-    updateMetaTag('twitter:image', 'https://kushithalakshitha.vercel.app/kushitha1.JPG'); // Replace with actual URL
+    updateMetaTag('twitter:image', 'https://kushithalakshitha.vercel.app/kushitha2.jpg'); // Replace with actual URL
 
     // Additional SEO meta tags
     updateMetaTag('viewport', 'width=device-width, initial-scale=1.0');
@@ -65,7 +65,7 @@ const App = () => {
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', 'https://kushithalakshitha.vercel.app/'); // Replace with actual URL
+    canonicalLink.setAttribute('href', 'https://kushithalakshitha.live/'); // Replace with actual URL
 
     // Add JSON-LD structured data
     let structuredDataScript = document.querySelector('#structured-data');
@@ -82,8 +82,8 @@ const App = () => {
       "name": "Kushitha Lakshitha",
       "jobTitle": "Frontend Developer",
       "description": "Professional software developer specializing in web development and mobile applications",
-      "url": "https://kushithalakshitha.vercel.app/", // Replace with actual URL
-      "image": "https://kushithalakshitha.vercel.app/kushitha1.JPG", // Replace with actual URL
+      "url": "https://kushithalakshitha.live/", // Replace with actual URL
+      "image": "https://kushithalakshitha.live/kushitha2.jpg", // Replace with actual URL
       "sameAs": [
         "https://github.com/kushitha1521", // Replace with actual URLs
         "https://linkedin.com/in/kushitha-lakshitha"
