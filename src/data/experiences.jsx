@@ -1,7 +1,7 @@
 export const experiences = [
     {
       company: "AWS Cloud Club (University of Kelaniya)",
-      position: "Finance cordinator",
+      position: "Finance coordinator",
       period: "2024 - Present",
       description: "Lead the finance team of the AWS cloud club.",
       achievements: [
@@ -15,7 +15,7 @@ export const experiences = [
       period: "2025 ",
       description: "Handle the digital marketing side of the project e-waste.",
       achievements: [
-        "Industry conncetions",
+        "Industry connections",
         
       ]
     },
