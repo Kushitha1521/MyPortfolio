@@ -10,6 +10,8 @@ import Medusa from './projects/Medusa.jsx'
 import Crypto from './projects/Crypto.jsx'
 import Student_Attendence from './projects/Student_Attendence.jsx'
 import C_Chat from './projects/C_Chat.jsx'
+import ALU from './projects/ALU.jsx'
+import NIC from './projects/NIC.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,6 +25,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/projects/crypto" element={<Crypto />} />
         <Route path="/projects/student-attendance" element={<Student_Attendence />} />
         <Route path="/projects/c-chat" element={<C_Chat />} />
+        <Route path="/projects/alu-design" element={<ALU />} />
+        <Route path="/projects/nic" element={<NIC />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

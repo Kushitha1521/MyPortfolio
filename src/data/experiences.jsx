@@ -3,7 +3,7 @@ export const experiences = [
       company: "AWS Cloud Club (University of Kelaniya)",
       position: "Finance cordinator",
       period: "2024 - Present",
-      description: "Lead the fince team of the AWS cloud club.",
+      description: "Lead the finance team of the AWS cloud club.",
       achievements: [
         "Teamwork",
        

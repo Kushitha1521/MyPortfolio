@@ -32,7 +32,7 @@ export const projects = [
       category: "web"
     },
     {
-      name: "STUDENT ATTENDANCE SYSTEM", 
+      name: "Student Attendance System", 
       slug: "student-attendance",
       description: "Students' attendance system with a GUI helps the lecturers to manage student data.",
       image: "/student_attendance.png",
@@ -46,5 +46,22 @@ export const projects = [
       image: "/c_chat.png",
       technologies: ["C", "Linux", "GitHub"],
       category: "Desktop Application"
-    }
+    },
+    {
+      name: "4-Bit ALU Design and Implementation", 
+      slug: "alu-design",
+      description: "Design and implementation of a 4-bit Arithmetic Logic Unit.",
+      image: "/ALU.png",
+      technologies: ["Verilog", "VHDL", "Quartus Prime Lite","CPLD","EPM240T100C5","Altera Max Ⅱ","RTL Simulation","", "GitHub"],
+      category: "Digital Design"
+    },
+    {
+      name: "ENTER NIC", 
+      slug: "nic",
+      description: "When the user inputs the NIC number, the user can get the details of the owner of the NIC.",
+      image: "/nic.png",
+      technologies: ["python","GitHub"],
+      category: "Desktop Application"
+    },
+    
   ];
