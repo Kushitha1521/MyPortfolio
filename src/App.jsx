@@ -33,11 +33,41 @@ const TypewriterText = ({ text }) => {
   }, [currentIndex, text]);
 
   return (
-    <span role="text" aria-label={text}>
-      {displayText}
-      <span className="animate-pulse" aria-hidden="true">|</span>
-    </span>
-  );
+  <span role="text" aria-label={text}>
+    {displayText.split(" ").map((word, i) => {
+      const highlightWords = [
+        "IoT",
+        "Developer",
+        "Embedded",
+        "Systems",
+        "React",
+        "AI",
+        "Robotics",
+        "Cybersecurity"
+      ];
+
+      const isHighlighted = highlightWords.includes(word);
+
+      return (
+        <span key={i}>
+          <span
+            className={
+              isHighlighted
+                ? "text-cyan-400 font-semibold drop-shadow-[0_0_6px_rgba(34,211,238,0.6)]"
+                : "text-gray-300"
+            }
+          >
+            {word}
+          </span>
+
+          <span> </span>
+        </span>
+      );
+    })}
+
+    <span className="animate-pulse" aria-hidden="true">|</span>
+  </span>
+);
 };
 
 // SkillBar: receives isVisible as a prop
@@ -413,7 +443,7 @@ const handleFormSubmit = async (e) => {
     ? projects
     : projects.filter(p => p.category === activeTab);
 
-  const navItems = ['Home', 'Projects', 'Skills', 'Experience', 'Creative Showcase', 'Contact'];
+  const navItems = ['Home', 'Skills', 'Projects',  'Experience', 'Creative Showcase', 'Contact'];
 
   const socialLinks = [
   {
