@@ -11,7 +11,7 @@ const categories = [
   "Tickets",
   "Certificates",
   "Banners",
-  "Thumbnails",
+  "Posters",
 ];
 
 export default function CreativeGallery() {
