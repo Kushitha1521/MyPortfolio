@@ -16,6 +16,30 @@ export const projects = [
       category: "IOT"
     },
     {
+      name: "4-Bit ALU Design and Implementation", 
+      slug: "alu-design",
+      description: "Design and implementation of a 4-bit Arithmetic Logic Unit.",
+      image: "/ALU.png",
+      technologies: ["Verilog", "VHDL", "Quartus Prime Lite","CPLD","EPM240T100C5","Altera Max Ⅱ","RTL Simulation","", "GitHub"],
+      category: "Digital Design"
+    },
+    {
+      name: "Design and Simulation of a Portable 18650 Lithium-Ion Power Bank",
+      slug: "power-bank",
+      description: "Design and development of a power bank system with charging control, battery protection, and power monitoring Voltmeter Module.",
+      image: "/powerbank.jpg",
+      technologies: [
+        "1S BMS",
+        "TP4056 Charging Module",
+        "XL6009 Boost DC-DC Converter",
+        "Power Optimization",
+        "Altium Designer",
+        "Proteus Simulation",
+        "Voltmeter Module"
+      ],
+      category: "Electronics"
+    },
+    {
       name: "Anti-virus software (MEDUSA)", 
       slug: "medusa",
       description: "Anti-virus software with real-time protection and malware detection",
@@ -47,14 +71,7 @@ export const projects = [
       technologies: ["C", "Linux", "GitHub"],
       category: "Desktop Application"
     },
-    {
-      name: "4-Bit ALU Design and Implementation", 
-      slug: "alu-design",
-      description: "Design and implementation of a 4-bit Arithmetic Logic Unit.",
-      image: "/ALU.png",
-      technologies: ["Verilog", "VHDL", "Quartus Prime Lite","CPLD","EPM240T100C5","Altera Max Ⅱ","RTL Simulation","", "GitHub"],
-      category: "Digital Design"
-    },
+    
     {
       name: "ENTER NIC", 
       slug: "nic",

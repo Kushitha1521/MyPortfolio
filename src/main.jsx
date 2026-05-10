@@ -12,6 +12,7 @@ import Student_Attendence from './projects/Student_Attendence.jsx'
 import C_Chat from './projects/C_Chat.jsx'
 import ALU from './projects/ALU.jsx'
 import NIC from './projects/NIC.jsx'
+import CreativeGallery from './pages/CreativeGallery.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/projects/c-chat" element={<C_Chat />} />
         <Route path="/projects/alu-design" element={<ALU />} />
         <Route path="/projects/nic" element={<NIC />} />
+        <Route path="/creative-gallery" element={<CreativeGallery />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
