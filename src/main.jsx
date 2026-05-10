@@ -13,7 +13,7 @@ import C_Chat from './projects/C_Chat.jsx'
 import ALU from './projects/ALU.jsx'
 import NIC from './projects/NIC.jsx'
 import CreativeGallery from './pages/CreativeGallery.jsx'
-import PowerBank from './projects/Power_Bank.jsx'
+//import PowerBank from './projects/Power_Bank.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -30,7 +30,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/projects/c-chat" element={<C_Chat />} />
         <Route path="/projects/alu-design" element={<ALU />} />
         <Route path="/projects/nic" element={<NIC />} />
-        <Route path="/projects/power-bank" element={<PowerBank />} />
         <Route path="/creative-gallery" element={<CreativeGallery />} />
       </Routes>
     </BrowserRouter>
