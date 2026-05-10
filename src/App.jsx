@@ -72,88 +72,163 @@ const SkillBar = ({ name, level, delay, isVisible }) => (
 );
 
 // TimelineItem: receives isVisibleTimeline as a prop
-const TimelineItem = ({ experience, index, isVisibleTimeline }) => (
-  <article className="mb-8 w-full">
-    {/* Mobile view */}
-    <div className="md:hidden w-full">
-      <div
-        className={`bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl px-4 py-3 sm:px-6 sm:py-4 border-l-4 border-blue-600 transition-all duration-700 transform ${
-          isVisibleTimeline ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-        style={{ transitionDelay: `${index * 200}ms` }}
-      >
-        <div className="flex items-center mb-2">
-          <div
-            className="bg-blue-800 shadow-xl w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center mr-2 sm:mr-3"
-            aria-hidden="true"
-          >
-            <span className="font-semibold text-sm sm:text-base text-white">{index + 1}</span>
-          </div>
-          <div>
-            <h3 className="font-bold text-blue-400 text-base sm:text-lg">{experience.position}</h3>
-            <h4 className="text-blue-300 text-sm sm:text-base">{experience.company}</h4>
-          </div>
-        </div>
-        <time className="text-xs sm:text-sm text-gray-300 mb-2 block">{experience.period}</time>
-        <p className="text-gray-300 text-xs sm:text-sm mb-2">{experience.description}</p>
-        <ul className="text-xs sm:text-sm" role="list">
-          {experience.achievements.map((achievement, i) => (
-            <li
-              key={i}
-              className="mb-1 text-gray-400"
-              style={{
-                transform: isVisibleTimeline ? 'translateX(0)' : 'translateX(-20px)',
-                opacity: isVisibleTimeline ? 1 : 0,
-                transition: 'transform 0.5s ease, opacity 0.5s ease',
-                transitionDelay: `${index * 200 + i * 100 + 300}ms`,
-              }}
-            >
-              • {achievement}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+const TimelineItem = ({ experience, index, isVisibleTimeline }) => {
 
-    {/* Desktop view */}
-    <div className="hidden md:flex flex-col md:flex-row justify-between items-center w-full">
-      <div className="order-1 w-5/12" />
-      <div
-        className="z-20 flex items-center order-1 bg-blue-800 shadow-xl w-8 h-8 rounded-full mb-4 md:mb-0"
-        aria-hidden="true"
-      >
-        <span className="mx-auto font-semibold text-lg text-white">{index + 1}</span>
+  const isLeft = index % 2 === 0;
+
+  return (
+    <article className="mb-4 w-full">
+
+      {/* ── Mobile View ───────────────────────── */}
+      <div className="md:hidden w-full">
+        <div
+          className={`bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl px-5 py-4 border-l-4 border-blue-600 transition-all duration-700 transform ${
+            isVisibleTimeline
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10'
+          }`}
+          style={{ transitionDelay: `${index * 200}ms` }}
+        >
+
+          {/* Header */}
+          <div className="flex items-center mb-3">
+
+            <div className="bg-blue-700 shadow-lg w-8 h-8 rounded-full flex items-center justify-center mr-3">
+              <span className="font-semibold text-white text-sm">
+                {index + 1}
+              </span>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-blue-400 text-lg">
+                {experience.position}
+              </h3>
+
+              <h4 className="text-blue-300 text-sm">
+                {experience.company}
+              </h4>
+            </div>
+
+          </div>
+
+          {/* Period */}
+          <time className="text-xs text-gray-400 mb-3 block">
+            {experience.period}
+          </time>
+
+          {/* Description */}
+          <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+            {experience.description}
+          </p>
+
+          {/* Achievements */}
+          <ul className="space-y-2">
+            {experience.achievements.map((achievement, i) => (
+              <li
+                key={i}
+                className="text-sm text-gray-400"
+                style={{
+                  transform: isVisibleTimeline
+                    ? 'translateX(0)'
+                    : 'translateX(-20px)',
+                  opacity: isVisibleTimeline ? 1 : 0,
+                  transition: 'transform 0.5s ease, opacity 0.5s ease',
+                  transitionDelay: `${index * 200 + i * 100 + 300}ms`,
+                }}
+              >
+                • {achievement}
+              </li>
+            ))}
+          </ul>
+
+        </div>
       </div>
+
+      {/* ── Desktop Alternating Timeline ───────────────────────── */}
       <div
-        className={`order-1 bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 transition-all duration-1000 transform ${
-          isVisibleTimeline ? 'opacity-100 translate-x-0' : 'opacity-0 md:translate-x-10'
+        className={`hidden md:flex items-center w-full ${
+          isLeft ? 'flex-row' : 'flex-row-reverse'
         }`}
-        style={{ transitionDelay: `${index * 200}ms` }}
       >
-        <h3 className="mb-1 font-bold text-blue-400 text-lg md:text-xl">{experience.position}</h3>
-        <h4 className="mb-2 text-blue-300 text-base md:text-lg">{experience.company}</h4>
-        <time className="text-xs md:text-sm text-gray-300 mb-2 block">{experience.period}</time>
-        <p className="text-gray-300 text-sm md:text-base mb-3">{experience.description}</p>
-        <ul className="text-xs md:text-sm" role="list">
-          {experience.achievements.map((achievement, i) => (
-            <li
-              key={i}
-              className="mb-1 text-gray-400"
-              style={{
-                transform: isVisibleTimeline ? 'translateX(0)' : 'translateX(-20px)',
-                opacity: isVisibleTimeline ? 1 : 0,
-                transition: 'transform 0.5s ease, opacity 0.5s ease',
-                transitionDelay: `${index * 200 + i * 100 + 300}ms`,
-              }}
-            >
-              • {achievement}
-            </li>
-          ))}
-        </ul>
+
+        {/* Empty Space */}
+        <div className="w-5/12"></div>
+
+        {/* Center Timeline Dot */}
+        <div className="relative flex items-center justify-center w-2/12">
+
+          <div className="w-5 h-5 bg-blue-600 rounded-full border-4 border-black z-10"></div>
+
+        </div>
+
+        {/* Content Card */}
+        <div
+          className={`w-5/12 bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-blue-500/20 transition-all duration-700 transform hover:border-blue-500/40 ${
+            isVisibleTimeline
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10'
+          }`}
+          style={{ transitionDelay: `${index * 200}ms` }}
+        >
+
+          {/* Header */}
+          <div className="flex items-center mb-4">
+
+            <div className="bg-blue-700 shadow-lg w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <span className="font-semibold text-white">
+                {index + 1}
+              </span>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-blue-400 text-xl">
+                {experience.position}
+              </h3>
+
+              <h4 className="text-blue-300 text-sm">
+                {experience.company}
+              </h4>
+            </div>
+
+          </div>
+
+          {/* Period */}
+          <time className="text-sm text-gray-400 mb-4 block">
+            {experience.period}
+          </time>
+
+          {/* Description */}
+          <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+            {experience.description}
+          </p>
+
+          {/* Achievements */}
+          <ul className="space-y-2">
+            {experience.achievements.map((achievement, i) => (
+              <li
+                key={i}
+                className="text-sm text-gray-400"
+                style={{
+                  transform: isVisibleTimeline
+                    ? 'translateX(0)'
+                    : 'translateX(-20px)',
+                  opacity: isVisibleTimeline ? 1 : 0,
+                  transition: 'transform 0.5s ease, opacity 0.5s ease',
+                  transitionDelay: `${index * 200 + i * 100 + 300}ms`,
+                }}
+              >
+                • {achievement}
+              </li>
+            ))}
+          </ul>
+
+        </div>
+
       </div>
-    </div>
-  </article>
-);
+    </article>
+  );
+};
+
 
 // ─────────────────────────────────────────────
 // Main App Component
@@ -544,6 +619,125 @@ const handleFormSubmit = async (e) => {
             <path fill="currentColor" d="M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,80C840,85,960,75,1080,69.3C1200,64,1320,64,1380,64L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" />
           </svg>
         </div>
+               {/* ══ SKILLS ════════════════════════════ */}
+<section id="skills" className="py-16 bg-black px-4 sm:px-6 lg:px-8">
+
+  <div className="container mx-auto max-w-7xl">
+
+    {/* Title */}
+    <h2
+      className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-blue-400 transition-all duration-1000 ${
+        isVisible["skills"] ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      Technical Skills
+    </h2>
+
+    {/* Two Columns */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+      {/* ── Electronics Skills ───────────────── */}
+      <div>
+
+        <h3 className="text-2xl font-semibold text-cyan-400 mb-6 text-center">
+          Electronics & Embedded Systems
+        </h3>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+
+          {skills
+            .filter(skill => skill.type === "electronics")
+            .map((skill, index) => (
+              <div
+                key={index}
+                className={`group bg-gray-900 border border-cyan-500/10 rounded-2xl p-5 flex flex-col items-center text-center transition-all duration-500 hover:border-cyan-500/40 hover:-translate-y-1 ${
+                  isVisible["skills"]
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+
+                {/* Icon
+                <div className="w-14 h-14 rounded-full bg-cyan-900/40 flex items-center justify-center mb-4 group-hover:bg-cyan-600 transition">
+
+                  <span className="text-cyan-300 font-bold text-lg">
+                    {skill.name.charAt(0)}
+                  </span>
+
+                </div> */}
+
+                {/* Skill Name */}
+                <h3 className="text-white font-semibold text-sm sm:text-base group-hover:text-cyan-300 transition">
+                  {skill.name}
+                </h3>
+
+                {/* Category
+                <p className="text-xs text-gray-500 mt-1">
+                  {skill.category}
+                </p> */}
+
+              </div>
+            ))}
+
+        </div>
+      </div>
+
+      {/* ── Computer Science Skills ───────────────── */}
+      <div>
+
+        <h3 className="text-2xl font-semibold text-blue-400 mb-6 text-center">
+          Computer Science & Software
+        </h3>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+
+          {skills
+            .filter(skill => skill.type === "software")
+            .map((skill, index) => (
+              <div
+                key={index}
+                className={`group bg-gray-900 border border-blue-500/10 rounded-2xl p-5 flex flex-col items-center text-center transition-all duration-500 hover:border-blue-500/40 hover:-translate-y-1 ${
+                  isVisible["skills"]
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+
+                {/* Icon
+                <div className="w-14 h-14 rounded-full bg-blue-900/40 flex items-center justify-center mb-4 group-hover:bg-blue-600 transition">
+
+                  <span className="text-blue-300 font-bold text-lg">
+                    {skill.name.charAt(0)}
+                  </span>
+
+                </div> */}
+
+                {/* Skill Name */}
+                <h3 className="text-white font-semibold text-sm sm:text-base group-hover:text-blue-300 transition">
+                  {skill.name}
+                </h3>
+
+                {/* Category
+                <p className="text-xs text-gray-500 mt-1">
+                  {skill.category}
+                </p> */}
+
+              </div>
+            ))}
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
         {/* ══ PROJECTS ══════════════════════════ */}
         <section
@@ -645,79 +839,7 @@ const handleFormSubmit = async (e) => {
           </svg>
         </div>
 
-      {/* ══ SKILLS ════════════════════════════ */}
-<section id="skills" className="-mt-30 py-20 bg-black px-4 sm:px-6 lg:px-8">
-
-  <div className="container mx-auto max-w-7xl ">
-
-    {/* Title */}
-    <h2
-      className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-blue-400 transition-all duration-1000 ${
-        isVisible["skills"] ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      Technical Skills
-    </h2>
-
-    {/* Skills Unified List */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-
-      {skills.map((skill, index) => (
-        <div
-          key={index}
-          className={`group bg-gray-900 border border-blue-500/10 rounded-2xl p-5 transition-all duration-500 hover:border-blue-500/40 hover:scale-[1.02] ${
-            isVisible["skills"]
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
-          }`}
-          style={{ transitionDelay: `${index * 60}ms` }}
-        >
-
-          {/* Top Row */}
-          <div className="flex items-center gap-4 mb-3">
-
-            {/* Icon */}
-            <div className="w-12 h-12 rounded-full bg-blue-900/40 flex items-center justify-center group-hover:bg-blue-600 transition">
-              <span className="text-blue-300 font-bold">
-                {skill.name.charAt(0)}
-              </span>
-            </div>
-
-            {/* Name + Category */}
-            <div>
-              <h3 className="text-white font-semibold group-hover:text-blue-300 transition">
-                {skill.name}
-              </h3>
-
-              <p className="text-xs text-gray-500">
-                {skill.category}
-              </p>
-            </div>
-
-            {/* Percentage */}
-            <span className="ml-auto text-sm text-blue-400 font-semibold">
-              {skill.level}%
-            </span>
-
-          </div>
-
-          {/* Progress Bar */}
-          <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-
-            <div
-              className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-700"
-              style={{ width: `${skill.level}%` }}
-            ></div>
-
-          </div>
-
-        </div>
-      ))}
-
-    </div>
-
-  </div>
-</section>
+    
 
         {/* ══ EXPERIENCE ════════════════════════ */}
         <section id="experience" className="py-16 bg-gray-900/50 px-4 sm:px-6">
@@ -911,7 +1033,7 @@ const handleFormSubmit = async (e) => {
                     type="text"
                     value={formData.name}
                     onChange={handleFormChange}
-                    placeholder="Jane Doe"
+                    placeholder="Kushitha Lakshitha"
                     className="w-full p-2 sm:p-3 bg-gray-700/70 text-white border-2 border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-sm sm:text-base focus:ring-2 focus:ring-blue-400"
                     required
                     aria-required="true"
@@ -926,7 +1048,7 @@ const handleFormSubmit = async (e) => {
                     type="email"
                     value={formData.email}
                     onChange={handleFormChange}
-                    placeholder="jane@example.com"
+                    placeholder="kushitha@example.com"
                     className="w-full p-2 sm:p-3 bg-gray-700/70 text-white border-2 border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-sm sm:text-base focus:ring-2 focus:ring-blue-400"
                     required
                     aria-required="true"

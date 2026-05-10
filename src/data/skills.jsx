@@ -1,37 +1,205 @@
 export const skills = [
+
+  // ═══════════════════════════════════════
+  // COMPUTER SCIENCE & SOFTWARE
+  // ═══════════════════════════════════════
+
   // Frontend
-  { name: "React.js", level: 90, category: "Frontend" },
-  { name: "JavaScript", level: 90, category: "Frontend" },
-  { name: "HTML5", level: 95, category: "Frontend" },
-  { name: "CSS3 / Tailwind CSS", level: 90, category: "Frontend" },
+  {
+    name: "React.js",
+    category: "Frontend",
+    type: "software",
+  },
+  {
+    name: "JavaScript",
+    category: "Frontend",
+    type: "software",
+  },
+  {
+    name: "HTML5",
+    category: "Frontend",
+    type: "software",
+  },
+  {
+    name: "CSS3 / Tailwind",
+    category: "Frontend",
+    type: "software",
+  },
+  {
+    name: "Flutter",
+    category: "Frontend",
+    type: "software",
+  },
 
   // Backend
-  { name: "FastAPI", level: 80, category: "Backend" },
-  { name: "Spring Boot", level: 75, category: "Backend" },
-  { name: "Node.js", level: 75, category: "Backend" },
+  {
+    name: "FastAPI",
+    category: "Backend",
+    type: "software",
+  },
+  {
+    name: "Spring Boot",
+    category: "Backend",
+    type: "software",
+  },
+  {
+    name: "Node.js",
+    category: "Backend",
+    type: "software",
+  },
+   {
+    name: "PHP",
+    category: "Backend",
+    type: "software",
+  },
+   {
+    name: "SQL",
+    category: "database",
+    type: "software",
+  },
+   {
+    name: "Supabase",
+    category: "database",
+    type: "software",
+  },
+  {
+    name: "Vercel",
+    category: "Hosting",
+    type: "software",
+  },
+    {
+    name: "Hugging Face",
+    category: "Hosting",
+    type: "software",
+  },
 
-  // Embedded & IoT
-  { name: "Arduino", level: 90, category: "Embedded" },
-  { name: "ESP32", level: 85, category: "Embedded" },
-  { name: "Embedded C / C++", level: 85, category: "Embedded" },
-  { name: "IoT Systems", level: 85, category: "Embedded" },
-
-  // Electronics
-  { name: "Circuit Design", level: 85, category: "Electronics" },
-  { name: "PCB Design", level: 80, category: "Electronics" },
-  { name: "Power Electronics", level: 75, category: "Electronics" },
 
   // AI / Data
-  { name: "Machine Learning", level: 70, category: "AI" },
-  { name: "Data Analysis", level: 70, category: "AI" },
+  {
+    name: "Machine Learning",
+    category: "AI",
+    type: "software",
+  },
+  // {
+  //   name: "Data Analysis",
+  //   category: "AI",
+  //   type: "software",
+  // },
 
   // Cybersecurity
-  { name: "Cybersecurity Basics", level: 75, category: "Security" },
-  { name: "Linux", level: 80, category: "Security" },
+    {
+    name: "CTF Challenges",
+    category: "Security",
+    type: "software",
+  },
+  {
+    name: " Burp Suite",
+    category: "Security",
+    type: "software",
+  },
+  {
+    name: "Linux",
+    category: "Security",
+    type: "software",
+  },
+   {
+    name: "Wireshark",
+    category: "Security",
+    type: "software",
+  },
+    {
+    name: "Postman",
+    category: "Security",
+    type: "software",
+  },
 
-  // Tools
-  { name: "Git & GitHub", level: 85, category: "Tools" },
-  { name: "Vite", level: 85, category: "Tools" },
-  { name: "Figma", level: 80, category: "Design" },
-  { name: "Photoshop", level: 85, category: "Design" },
+  // Tools & Design
+  {
+    name: "Git & GitHub",
+    category: "Tools",
+    type: "software",
+  },
+  {
+    name: "Vite",
+    category: "Tools",
+    type: "software",
+  },
+  {
+    name: "Figma",
+    category: "UI/UX Design",
+    type: "software",
+  },
+  {
+    name: "Photoshop, Canva",
+    category: "Creative Design",
+    type: "software",
+  },
+
+
+
+  // ═══════════════════════════════════════
+  // ELECTRONICS & EMBEDDED SYSTEMS
+  // ═══════════════════════════════════════
+
+  // Embedded
+  {
+    name: "Arduino",
+    type: "electronics",
+  },
+  {
+    name: "ESP32",
+    type: "electronics",
+  },
+  {
+    name: "Embedded C / C++",
+    type: "electronics",
+  },
+  {
+    name: "IoT Systems",
+    type: "electronics",
+  },
+
+  // Electronics
+  {
+    name: "Circuit Design",
+    type: "electronics",
+  },
+  {
+    name: "PCB Design",
+    type: "electronics",
+  },
+  {
+    name: "Altium Designer",
+    type: "electronics",
+  },
+  {
+    name: "Proteus",
+    type: "electronics",
+  },
+  {
+    name: "Arduino Nano",
+    type: "electronics",
+  },
+  {
+    name: "Altera Qurtus Prime",
+    type: "electronics",
+  },
+  {
+    name: "FPGA Boards",
+    type: "electronics",
+  },
+   {
+    name: "PIC Microcontrollers",
+    type: "electronics",
+  },
+    {
+    name: "Communication Protocols",
+    type: "electronics",
+  },
+    {
+    name: "FSO Communication",
+    type: "electronics",
+  },
+  
+
 ];
