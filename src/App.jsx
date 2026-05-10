@@ -11,6 +11,7 @@ import {
   FaGlobe,
   FaEnvelope
 } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 // ─────────────────────────────────────────────
 // Sub-components defined OUTSIDE App to prevent
@@ -286,26 +287,39 @@ const App = () => {
     setFormData(prev => ({ ...prev, [key]: value }));
   };
 
-  const handleFormSubmit = async e => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      setFormStatus('error');
-      return;
-    }
-    setFormSubmitting(true);
-    setFormStatus('');
-    try {
-      // Replace this URL with your actual form endpoint (e.g. Formspree, EmailJS, etc.)
-      // Example with Formspree: await fetch('https://formspree.io/f/YOUR_ID', { method: 'POST', ... })
-      await new Promise(res => setTimeout(res, 1000)); // Simulated delay
-      setFormStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch {
-      setFormStatus('error');
-    } finally {
-      setFormSubmitting(false);
-    }
-  };
+ const handleFormSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.message) {
+    setFormStatus("error");
+    return;
+  }
+
+  setFormSubmitting(true);
+  setFormStatus("");
+
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
+    setFormStatus("success");
+    setFormData({ name: "", email: "", message: "" });
+
+  } catch (error) {
+    console.error(error);
+    setFormStatus("error");
+  } finally {
+    setFormSubmitting(false);
+  }
+};
 
   // ── Filtered projects ─────────────────────────
   const filteredProjects = activeTab === 'all'
