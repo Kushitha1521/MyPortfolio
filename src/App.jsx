@@ -9,7 +9,9 @@ import {
   FaInstagram,
   FaMedium,
   FaGlobe,
-  FaEnvelope
+  FaEnvelope,
+  FaWhatsapp,
+  FaPhoneAlt,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -103,159 +105,287 @@ const SkillBar = ({ name, level, delay, isVisible }) => (
 );
 
 // TimelineItem: receives isVisibleTimeline as a prop
+// TimelineItem: receives isVisibleTimeline as a prop
 const TimelineItem = ({ experience, index, isVisibleTimeline }) => {
 
   const isLeft = index % 2 === 0;
 
   return (
-    <article className="mb-4 w-full">
+    <article className="mb-6 w-full">
 
-      {/* ── Mobile View ───────────────────────── */}
+      {/* ─────────────────────────────────────────────
+          MOBILE VIEW
+      ───────────────────────────────────────────── */}
       <div className="md:hidden w-full">
+
         <div
-          className={`bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl px-5 py-4 border-l-4 border-blue-600 transition-all duration-700 transform ${
+          className={`relative overflow-hidden bg-gray-900/80 backdrop-blur-xl rounded-2xl shadow-2xl px-5 py-5 border border-blue-500/10 transition-all duration-700 transform hover:border-blue-500/40 hover:shadow-blue-500/10 ${
             isVisibleTimeline
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
-          style={{ transitionDelay: `${index * 200}ms` }}
+          style={{
+            transitionDelay: `${index * 200}ms`,
+          }}
         >
 
-          {/* Header */}
-          <div className="flex items-center mb-3">
+          {/* Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-400/5 pointer-events-none"></div>
 
-            <div className="bg-blue-700 shadow-lg w-8 h-8 rounded-full flex items-center justify-center mr-3">
-              <span className="font-semibold text-white text-sm">
+          {/* Header */}
+          <div className="relative z-10 flex items-center mb-4">
+
+            {/* Number */}
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg w-10 h-10 rounded-full flex items-center justify-center mr-4">
+
+              <span className="font-bold text-white text-sm">
                 {index + 1}
               </span>
+
             </div>
 
+            {/* Title */}
             <div>
-              <h3 className="font-bold text-blue-400 text-lg">
+
+              <h3 className="font-bold text-blue-400 text-lg leading-tight">
                 {experience.position}
               </h3>
 
-              <h4 className="text-blue-300 text-sm">
+              <h4 className="text-blue-200 text-sm">
                 {experience.company}
               </h4>
+
             </div>
 
           </div>
 
           {/* Period */}
-          <time className="text-xs text-gray-400 mb-3 block">
+          <time className="relative z-10 text-xs text-gray-400 mb-4 block tracking-wide uppercase">
             {experience.period}
           </time>
 
           {/* Description */}
-          <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+          <p className="relative z-10 text-gray-300 text-sm leading-relaxed mb-4">
             {experience.description}
           </p>
 
           {/* Achievements */}
-          <ul className="space-y-2">
+          <ul className="relative z-10 space-y-2">
+
             {experience.achievements.map((achievement, i) => (
+
               <li
                 key={i}
-                className="text-sm text-gray-400"
+                className="flex items-start text-sm text-gray-400"
                 style={{
                   transform: isVisibleTimeline
-                    ? 'translateX(0)'
-                    : 'translateX(-20px)',
+                    ? "translateX(0)"
+                    : "translateX(-20px)",
                   opacity: isVisibleTimeline ? 1 : 0,
-                  transition: 'transform 0.5s ease, opacity 0.5s ease',
+                  transition:
+                    "transform 0.5s ease, opacity 0.5s ease",
                   transitionDelay: `${index * 200 + i * 100 + 300}ms`,
                 }}
               >
-                • {achievement}
+
+                <span className="text-cyan-400 mr-2 mt-[2px]">
+                  ▹
+                </span>
+
+                <span>{achievement}</span>
+
               </li>
+
             ))}
+
           </ul>
 
+          {/* See More Link */}
+          {/* See More Button */}
+{experience.link && (
+
+  <a
+    href={experience.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative z-10 inline-flex items-center gap-2 mt-5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-cyan-500 hover:to-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105"
+  >
+
+    <span>
+      {experience.linkText || "See More"}
+    </span>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M14 5h5m0 0v5m0-5L10 14"
+      />
+
+    </svg>
+
+  </a>
+
+)}
+
         </div>
+
       </div>
 
-      {/* ── Desktop Alternating Timeline ───────────────────────── */}
+      {/* ─────────────────────────────────────────────
+          DESKTOP VIEW
+      ───────────────────────────────────────────── */}
       <div
         className={`hidden md:flex items-center w-full ${
-          isLeft ? 'flex-row' : 'flex-row-reverse'
+          isLeft ? "flex-row" : "flex-row-reverse"
         }`}
       >
 
         {/* Empty Space */}
         <div className="w-5/12"></div>
 
-        {/* Center Timeline Dot */}
+        {/* Timeline Center */}
         <div className="relative flex items-center justify-center w-2/12">
 
-          <div className="w-5 h-5 bg-blue-600 rounded-full border-4 border-black z-10"></div>
+          {/* Line Glow */}
+          <div className="absolute w-1 h-full bg-gradient-to-b from-blue-500/20 to-cyan-500/20 rounded-full"></div>
+
+          {/* Dot */}
+          <div className="relative w-6 h-6 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full border-4 border-black shadow-lg shadow-blue-500/40 z-10"></div>
 
         </div>
 
-        {/* Content Card */}
+        {/* Card */}
         <div
-          className={`w-5/12 bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-blue-500/20 transition-all duration-700 transform hover:border-blue-500/40 ${
+          className={`relative overflow-hidden w-5/12 bg-gray-900/80 backdrop-blur-xl rounded-2xl shadow-2xl p-6 border border-blue-500/10 transition-all duration-700 transform hover:border-blue-500/40 hover:shadow-blue-500/10 hover:-translate-y-2 ${
             isVisibleTimeline
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
-          style={{ transitionDelay: `${index * 200}ms` }}
+          style={{
+            transitionDelay: `${index * 200}ms`,
+          }}
         >
 
-          {/* Header */}
-          <div className="flex items-center mb-4">
+          {/* Glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-400/5 pointer-events-none"></div>
 
-            <div className="bg-blue-700 shadow-lg w-10 h-10 rounded-full flex items-center justify-center mr-4">
-              <span className="font-semibold text-white">
+          {/* Header */}
+          <div className="relative z-10 flex items-center mb-5">
+
+            {/* Number */}
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg w-12 h-12 rounded-full flex items-center justify-center mr-4">
+
+              <span className="font-bold text-white">
                 {index + 1}
               </span>
+
             </div>
 
+            {/* Titles */}
             <div>
+
               <h3 className="font-bold text-blue-400 text-xl">
                 {experience.position}
               </h3>
 
-              <h4 className="text-blue-300 text-sm">
+              <h4 className="text-blue-200 text-sm">
                 {experience.company}
               </h4>
+
             </div>
 
           </div>
 
           {/* Period */}
-          <time className="text-sm text-gray-400 mb-4 block">
+          <time className="relative z-10 text-sm text-gray-400 mb-4 block tracking-wide uppercase">
             {experience.period}
           </time>
 
           {/* Description */}
-          <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+          <p className="relative z-10 text-gray-300 text-sm leading-relaxed mb-5">
             {experience.description}
           </p>
 
           {/* Achievements */}
-          <ul className="space-y-2">
+          <ul className="relative z-10 space-y-2">
+
             {experience.achievements.map((achievement, i) => (
+
               <li
                 key={i}
-                className="text-sm text-gray-400"
+                className="flex items-start text-sm text-gray-400"
                 style={{
                   transform: isVisibleTimeline
-                    ? 'translateX(0)'
-                    : 'translateX(-20px)',
+                    ? "translateX(0)"
+                    : "translateX(-20px)",
                   opacity: isVisibleTimeline ? 1 : 0,
-                  transition: 'transform 0.5s ease, opacity 0.5s ease',
+                  transition:
+                    "transform 0.5s ease, opacity 0.5s ease",
                   transitionDelay: `${index * 200 + i * 100 + 300}ms`,
                 }}
               >
-                • {achievement}
+
+                <span className="text-cyan-400 mr-2 mt-[2px]">
+                  ▹
+                </span>
+
+                <span>{achievement}</span>
+
               </li>
+
             ))}
+
           </ul>
+
+          {/* See More */}
+          {/* See More Button */}
+{experience.link && (
+
+  <a
+    href={experience.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative z-10 inline-flex items-center gap-2 mt-5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-cyan-500 hover:to-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105"
+  >
+
+    <span>
+      {experience.linkText || "See More"}
+    </span>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M14 5h5m0 0v5m0-5L10 14"
+      />
+
+    </svg>
+
+  </a>
+
+)}
 
         </div>
 
       </div>
+
     </article>
   );
 };
@@ -452,12 +582,14 @@ const handleFormSubmit = async (e) => {
     url: "https://github.com/Kushitha1521",
     icon: FaGithub,
     label: "Visit my GitHub",
+    username: "@kushitha1521",
   },
   {
     platform: "LinkedIn",
     url: "https://linkedin.com/in/kushitha-lakshitha",
     icon: FaLinkedin,
     label: "Visit my LinkedIn",
+    username: "kushitha-lakshitha",
   },
   // {
   //   platform: "YouTube",
@@ -476,13 +608,29 @@ const handleFormSubmit = async (e) => {
     url: "https://medium.com/@kushithalakshitha",
     icon: FaMedium,
     label: "Read my Medium articles",
+    username: "@kushithalakshitha",
   },
   {
     platform:"Email",
     url: "mailto:kushithalakshitha@gmail.com",
     icon: FaEnvelope,
-    label: "Send me an email"
-  }
+    label: "Send me an email",
+    username: "kushithalakshitha@gmail.com"
+  },
+  {
+    platform: "WhatsApp",
+    url: "https://wa.me/94761143753",
+    label: "Chat on WhatsApp",
+    icon: FaWhatsapp,
+    username: "+94 761143753",
+  },
+   {
+    platform: "Phone",
+    url: "tel:+94714807853",
+    label: "Call Me",
+    icon: FaPhoneAlt,
+    username: "+94 714807853",
+  },
 ];
   // ── Render ────────────────────────────────────
   return (
@@ -1340,44 +1488,57 @@ const handleFormSubmit = async (e) => {
             </div>
 
             {/* Social links */}
-            {/* Social links */}
-            <div className="mt-8 md:mt-12 flex flex-wrap justify-center gap-4 sm:gap-6">
+           <div className="mt-10 md:mt-14 flex flex-wrap justify-center gap-5 sm:gap-7">
 
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
+  {socialLinks.map((social, index) => {
+    const Icon = social.icon;
 
-                return (
-                  <a
-                    key={social.platform}
-                    href={social.url}
-                    className={`group flex flex-col items-center transition-all duration-500 transform focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-xl p-3 ${
-                      isVisible["contact"]
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-10"
-                    }`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                    aria-label={social.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+    return (
+      <a
+        key={social.platform}
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={social.label}
+        className={`group relative flex flex-col items-center justify-center w-[140px] sm:w-[160px] p-5 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-500 hover:-translate-y-2 shadow-lg ${
+          isVisible["contact"]
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+        style={{
+          transitionDelay: `${index * 100}ms`,
+        }}
+      >
 
-                    {/* Icon Circle */}
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gray-900 border border-blue-500/20 flex items-center justify-center mb-2 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300 shadow-lg">
+        {/* Glow */}
+        <div className="absolute inset-0 rounded-2xl bg-blue-500/0 group-hover:bg-blue-500/10 blur-xl transition-all duration-500"></div>
 
-                      <Icon className="text-xl text-white" />
+        {/* Icon */}
+        <div className="relative z-10 w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-white text-2xl mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
 
-                    </div>
+          <Icon />
 
-                    {/* Label */}
-                    <span className="text-xs sm:text-sm text-gray-400 group-hover:text-blue-400 transition">
-                      {social.platform}
-                    </span>
+        </div>
 
-                  </a>
-                );
-              })}
+        {/* Platform */}
+        <h4 className="relative z-10 text-sm sm:text-base font-semibold text-white group-hover:text-blue-400 transition">
 
-            </div>
+          {social.platform}
+
+        </h4>
+
+        {/* Username / Contact */}
+        <p className="relative z-10 text-xs text-gray-400 mt-1 text-center break-all">
+
+          {social.username}
+
+        </p>
+
+      </a>
+    );
+  })}
+
+</div>
           </div>
         </section>
 
