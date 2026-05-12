@@ -12,6 +12,7 @@ import {
   FaEnvelope
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 // ─────────────────────────────────────────────
 // Sub-components defined OUTSIDE App to prevent
@@ -368,7 +369,7 @@ const App = () => {
     );
 
     // Observe all sections by ID
-    const sectionIds = ['home', 'projects', 'skills', 'experience', 'creative showcase', 'contact'];
+    const sectionIds = ['home','education', 'projects', 'skills', 'experience','achievements' ,'creative showcase', 'contact'];
     sectionIds.forEach(id => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -443,7 +444,7 @@ const handleFormSubmit = async (e) => {
     ? projects
     : projects.filter(p => p.category === activeTab);
 
-  const navItems = ['Home', 'Skills', 'Projects',  'Experience', 'Creative Showcase', 'Contact'];
+  const navItems = ['Home','Education', 'Skills', 'Projects',  'Experience','Achievements', 'Creative Showcase', 'Contact'];
 
   const socialLinks = [
   {
@@ -649,6 +650,96 @@ const handleFormSubmit = async (e) => {
             <path fill="currentColor" d="M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,80C840,85,960,75,1080,69.3C1200,64,1320,64,1380,64L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" />
           </svg>
         </div>
+
+
+        {/* Education */}
+               
+               <section id="education" className="py-20 bg-gray-900/50 px-4 sm:px-6 lg:px-8">
+  <div className="container mx-auto max-w-6xl">
+
+    {/* Title */}
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-14 text-blue-400">
+      Education
+    </h2>
+
+    <div className="space-y-8">
+
+      {/* BSc */}
+      <div className="bg-gray-900/80 border border-blue-500/20 rounded-2xl p-6 sm:p-8 shadow-xl hover:scale-[1.02] transition duration-300">
+
+        <h3 className="text-xl sm:text-2xl font-bold text-blue-400">
+          BSc (Hons) Electronics and Computer Science
+        </h3>
+
+        <p className="text-gray-300 mt-2">
+          University of Kelaniya
+        </p>
+
+        <div className="flex flex-wrap gap-4 mt-3 text-sm text-gray-400">
+          <span className="bg-blue-900/40 px-3 py-1 rounded-full">
+            GPA: 3.6
+          </span>
+          <span className="bg-cyan-900/40 px-3 py-1 rounded-full">
+            Final Year Undergraduate
+          </span>
+        </div>
+
+      </div>
+
+      {/* Hardware Certificate */}
+      <div className="bg-gray-900/80 border border-cyan-500/20 rounded-2xl p-6 sm:p-8 shadow-xl hover:scale-[1.02] transition duration-300">
+
+        <h3 className="text-xl sm:text-2xl font-bold text-cyan-400">
+          Computer Hardware Certificate Course
+        </h3>
+
+        <p className="text-gray-300 mt-2">
+          ICT Center – University of Kelaniya
+        </p>
+
+      </div>
+
+      {/* Makerspace */}
+      <div className="bg-gray-900/80 border border-purple-500/20 rounded-2xl p-6 sm:p-8 shadow-xl hover:scale-[1.02] transition duration-300">
+
+        <h3 className="text-xl sm:text-2xl font-bold text-purple-400">
+          Makerspace Program (Electronics & Robotics)
+        </h3>
+
+        <p className="text-gray-300 mt-2">
+          American Center – U.S. Embassy in Sri Lanka
+        </p>
+
+        <span className="inline-block mt-3 text-xs bg-purple-900/40 px-3 py-1 rounded-full text-purple-300">
+          Ongoing
+        </span>
+
+      </div>
+
+      {/* A/L */}
+      <div className="bg-gray-900/80 border border-green-500/20 rounded-2xl p-6 sm:p-8 shadow-xl hover:scale-[1.02] transition duration-300">
+
+        <h3 className="text-xl sm:text-2xl font-bold text-green-400">
+          G.C.E. Advanced Level (2021)
+        </h3>
+
+        <p className="text-gray-300 mt-2">
+          Telijjawila Central College
+        </p>
+
+        <p className="text-gray-400 mt-3 text-sm">
+          Passed with A, B, C grades in Physical Science stream  
+          (Combined Mathematics, ICT, Physics)
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+               
+               
+               
                {/* ══ SKILLS ════════════════════════════ */}
 <section id="skills" className="py-16 bg-black px-4 sm:px-6 lg:px-8">
 
@@ -680,7 +771,7 @@ const handleFormSubmit = async (e) => {
             .map((skill, index) => (
               <div
                 key={index}
-                className={`group bg-gray-900 border border-cyan-500/10 rounded-2xl p-5 flex flex-col items-center text-center transition-all duration-500 hover:border-cyan-500/40 hover:-translate-y-1 ${
+                className={`group bg-gray-900 border border-cyan-500/10 rounded-2xl p-3 flex flex-col items-center text-center transition-all duration-500 hover:border-cyan-500/40 hover:-translate-y-1 ${
                   isVisible["skills"]
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -727,7 +818,7 @@ const handleFormSubmit = async (e) => {
             .map((skill, index) => (
               <div
                 key={index}
-                className={`group bg-gray-900 border border-blue-500/10 rounded-2xl p-5 flex flex-col items-center text-center transition-all duration-500 hover:border-blue-500/40 hover:-translate-y-1 ${
+                className={`group bg-gray-900 border border-blue-500/10 rounded-2xl p-3 flex flex-col items-center text-center transition-all duration-500 hover:border-blue-500/40 hover:-translate-y-1 ${
                   isVisible["skills"]
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -854,6 +945,14 @@ const handleFormSubmit = async (e) => {
                           </span>
                         ))}
                       </div>
+                      
+                      <p
+                      className="inline-flex items-center gap-3 mt-4 px-6 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg hover:shadow-blue-500/40 hover:scale-105 transition duration-300"
+      >
+                      See More
+                      <span className="text-lg">→</span>
+                    </p>
+
                     </a>
                   </article>
                 ))}
@@ -872,7 +971,7 @@ const handleFormSubmit = async (e) => {
     
 
         {/* ══ EXPERIENCE ════════════════════════ */}
-        <section id="experience" className="py-16 bg-gray-900/50 px-4 sm:px-6">
+        <section id="experience" className="py-16 bg-black px-4 sm:px-6">
           <div className="container mx-auto max-w-5xl">
             <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-400 transition-all duration-1000 ${isVisible['experience'] ? 'opacity-100' : 'opacity-0'}`}>
               Professional Experience
@@ -901,12 +1000,143 @@ const handleFormSubmit = async (e) => {
           </div>
         </section>
 
+
+
+      {/* Achievements */}
+              <section id="achievements" className="py-20 bg-gray-900/50 px-4 sm:px-6 lg:px-8">
+  <div className="container mx-auto max-w-6xl">
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-14 text-yellow-400">
+      Achievements
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      {/* Robot Battles */}
+      <div className="bg-gray-900/80 border border-yellow-500/20 rounded-2xl p-6 shadow-xl hover:scale-[1.03] transition">
+
+        <h3 className="text-lg font-bold text-yellow-400">
+          2nd Runner-up
+        </h3>
+
+        <p className="text-gray-300 mt-1">
+          UOK Robot Battles 2K25
+        </p>
+
+       <a
+        href="https://www.linkedin.com/posts/kushitha-lakshitha_biteblades-uokrobotbattle2k25-zone24x7-activity-7378414094556545025-XrAK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkaV0MB7CtGiDgsZMfEFKJrugJsTg0c5kU"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 mt-3 text-sm text-yellow-400 hover:text-yellow-300 transition group"
+      >
+        See more
+        <FaExternalLinkAlt className="text-xs group-hover:translate-x-1 transition-transform" />
+      </a>
+
+      </div>
+
+      {/* JapuraExpo */}
+      <div className="bg-gray-900/80 border border-cyan-500/20 rounded-2xl p-6 shadow-xl hover:scale-[1.03] transition">
+
+        <h3 className="text-lg font-bold text-cyan-400">
+          1st Runner-up
+        </h3>
+
+        <p className="text-gray-300 mt-1">
+          JapuraExpo 2K25
+        </p>
+
+        <a
+          href="https://www.linkedin.com/posts/kushitha-lakshitha_innovation-universityofkelaniya-ecs-activity-7421892922012278784-woi0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkaV0MB7CtGiDgsZMfEFKJrugJsTg0c5kU"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-3 text-sm text-cyan-400 hover:text-cyan-300 transition group"
+        >
+          See more
+          <FaExternalLinkAlt className="text-xs group-hover:translate-x-1 transition-transform" />
+        </a>
+
+      </div>
+
+      {/* ICAPS */}
+      <div className="bg-gray-900/80 border border-blue-500/20 rounded-2xl p-6 shadow-xl hover:scale-[1.03] transition">
+
+        <h3 className="text-lg font-bold text-blue-400">
+          1st Runner-up
+        </h3>
+
+        <p className="text-gray-300 mt-1">
+          ICAPS 2025 Undergraduate Research Symposium (UOK)
+        </p>
+
+        <a
+        href="https://www.linkedin.com/posts/kushitha-lakshitha_icaps2025-innovation-smartenergy-activity-7382741595755827200-tcuO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkaV0MB7CtGiDgsZMfEFKJrugJsTg0c5kU"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 mt-3 text-sm text-blue-400 hover:text-blue-300 transition group"
+      >
+        See more
+        <FaExternalLinkAlt className="text-xs group-hover:translate-x-1 transition-transform" />
+      </a>
+
+      </div>
+
+      {/* Medusa CTF */}
+      <div className="bg-gray-900/80 border border-purple-500/20 rounded-2xl p-6 shadow-xl hover:scale-[1.03] transition">
+
+        <h3 className="text-lg font-bold text-purple-400">
+          Final Round Participant
+        </h3>
+
+        <p className="text-gray-300 mt-1">
+          Medusa 1.0 (CTF Competition) – University of Kelaniya (2024)
+        </p>
+
+        <a
+          href="https://www.linkedin.com/posts/kushitha-lakshitha_ctf-teamwork-kelaniya-activity-7281242204730236929-208O?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkaV0MB7CtGiDgsZMfEFKJrugJsTg0c5kU"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-3 text-sm text-purple-400 hover:text-purple-300 transition group"
+        >
+          See more
+          <FaExternalLinkAlt className="text-xs group-hover:translate-x-1 transition-transform" />
+        </a>
+
+      </div>
+
+      {/* PARAMOUNT */}
+      <div className="bg-gray-900/80 border border-green-500/20 rounded-2xl p-6 shadow-xl hover:scale-[1.03] transition md:col-span-2">
+
+        <h3 className="text-lg font-bold text-green-400">
+          Top 10 Team Member
+        </h3>
+
+        <p className="text-gray-300 mt-1">
+          PARAMOUNT 3.0 Mathematics Competition (2024)
+        </p>
+
+        <a
+          href="https://www.linkedin.com/posts/kushitha-lakshitha_paramount3-mathabrx-kelaniyapride-activity-7170740735862919169-1RVz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkaV0MB7CtGiDgsZMfEFKJrugJsTg0c5kU"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-3 text-sm text-green-400 hover:text-green-300 transition group"
+        >
+          See more
+          <FaExternalLinkAlt className="text-xs group-hover:translate-x-1 transition-transform" />
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
         
 
         {/* ══ CREATIVE WORKS ════════════════════ */}
         <section
           id="creative showcase"
-          className="py-20 bg-gradient-to-b from-black via-gray-950 to-black px-4 sm:px-6 lg:px-8"
+          className="py-20 bg-black via-gray-950 to-black px-4 sm:px-6 lg:px-8"
         >
           <div className="container mx-auto max-w-7xl">
             <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent transition-all duration-1000 ${
