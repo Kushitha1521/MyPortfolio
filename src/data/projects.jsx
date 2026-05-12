@@ -8,7 +8,10 @@ export const projects = [
       image: "/ev_project.jpg",
       technologies: ["React", "Tailwind", "Node.js","Vite","Spring Boot", "MongoDB","AWS","Nginx","Stripe","CI/CD","JWT","OAuth","WebSockets","GitHub","Vercel"],
       category: "web",
-      details:"Developing a full-stack EV charging platform with real-time slot booking, secure payments, and a userfriendly dashboard for managing schedules and charging history."
+      details:"Developing a full-stack EV charging platform with real-time slot booking, secure payments, and a userfriendly dashboard for managing schedules and charging history.",
+      LinkedInLink:"",
+      GitHubLink1:"https://github.com/RanasingheDD/ev_station_booking",
+      GitHubLink2:"https://github.com/RanasingheDD/api-ev-booking-system"
     },
     {
       name: "Energy monitoring & controlling system", 
