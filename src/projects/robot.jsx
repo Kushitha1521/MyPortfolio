@@ -4,9 +4,9 @@ import { projects } from '../data/projects'
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-const Power_Bank = () => {
+const Robot = () => {
 
-  const projectIndex = 4;
+  const projectIndex = 2;
   const navigate = useNavigate();
 
   return (
@@ -121,4 +121,4 @@ const Power_Bank = () => {
   )
 }
 
-export default Power_Bank
+export default Robot

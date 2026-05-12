@@ -14,6 +14,7 @@ import ALU from './projects/ALU.jsx'
 import NIC from './projects/NIC.jsx'
 import CreativeGallery from './pages/CreativeGallery.jsx'
 import PowerBank from './projects/Power_Bank.jsx'
+import Robot from './projects/robot.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -32,6 +33,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/projects/nic" element={<NIC />} />
         <Route path="/creative-gallery" element={<CreativeGallery />} />
         <Route path="/projects/power-bank" element={<PowerBank />} />
+        <Route path="/projects/combat-robot-uok" element={<Robot />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

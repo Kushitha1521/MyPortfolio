@@ -1,3 +1,5 @@
+import { details } from "framer-motion/client";
+
 export const projects = [
     {
       name: "EV CHARGING STATION RESERVATION SYSTEM",
@@ -5,7 +7,8 @@ export const projects = [
       description: "Full-stack web application with modern technologies",
       image: "/ev_project.jpg",
       technologies: ["React", "Tailwind", "Node.js","Vite","Spring Boot", "MongoDB","AWS","Nginx","Stripe","CI/CD","JWT","OAuth","WebSockets","GitHub","Vercel"],
-      category: "web"
+      category: "web",
+      details:"Developing a full-stack EV charging platform with real-time slot booking, secure payments, and a userfriendly dashboard for managing schedules and charging history."
     },
     {
       name: "Energy monitoring & controlling system", 
@@ -15,6 +18,47 @@ export const projects = [
       technologies: ["Python", "Machine Learning", "IoT", "ESP32","Hugging Face","GitHub","Docker","ESP Now","Voltage Sensing - ZMPT101B","Current Sensing - ACS712","Supabase","Proteus","Arduino","PCB Design","Simulation"],
       category: "IOT"
     },
+    {
+      name: "Combat Robot with Weapon System",
+      slug: "combat-robot-uok",
+      description:
+        "Remote-controlled combat robot with an integrated weapon system designed for UOK Robot Battles 2K25.",
+        
+      image: "/robot.jpeg",
+
+      technologies: [
+        "ESP32",
+        "Arduino",
+        "Motor Drivers",
+        "2.4GHz MC6C Transmitter",
+        "MC7RB Receiver",
+        "Li-Po Battery",
+        "DC Motors",
+        "Relay Module",
+        "Wireless Communication",
+        "Power Management",
+        "Embedded Systems",
+        "Combat Robotics"
+      ],
+
+      category: "Embedded Systems",
+
+      details: `
+    COMBAT ROBOT WITH WEAPON SYSTEM – UOK ROBOT BATTLES 2K25
+    09/2025 - 07/2025
+
+    Designed and developed a remote-controlled combat robot (“Tombstone”) with an integrated weapon system, focusing on motor control, wireless communication, and power management.
+
+    Key Features:
+    • High-speed weapon system integration
+    • Wireless remote control using 2.4GHz transmitter & receiver
+    • Efficient power distribution using Li-Po battery systems
+    • Embedded motor control for movement and weapon actuation
+    • Robust chassis design for combat performance
+
+    `
+    },
+
     {
       name: "4-Bit ALU Design and Implementation", 
       slug: "alu-design",

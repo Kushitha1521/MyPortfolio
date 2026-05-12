@@ -1023,12 +1023,13 @@ const handleFormSubmit = async (e) => {
               {[
                 { id: 'all', label: 'All' },
                 { id: 'web', label: 'Web' },
-                { id: 'data', label: 'Data' },
-                { id: 'mobile', label: 'Mobile' },
+                // { id: 'data', label: 'Data' },
+                // { id: 'mobile', label: 'Mobile' },
                 { id: 'IOT', label: 'IoT' },
                 { id: 'Desktop Application', label: 'Desktop App' },
                 { id: 'Digital Design', label: 'Digital Design' },
                  { id: 'Electronics', label: 'Electronics' },
+                 { id: 'Embedded Systems', label: 'Embedded Systems' },
               ].map(tab => (
                 <button
                   key={tab.id}
