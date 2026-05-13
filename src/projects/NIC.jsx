@@ -108,6 +108,49 @@ const NIC = () => {
                 {projects[projectIndex].category}
               </span>
 
+
+              {/* LinkedIn Link */}
+                            <div><br></br></div>
+              
+                            <div className="text-gray-300 leading-relaxed whitespace-pre-line text-sm sm:text-base tracking-wide">
+                              {projects[projectIndex].LinkedInLink && (
+                                <a
+                                  href={projects[projectIndex].LinkedInLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                                >
+                                  View on LinkedIn
+                                </a>
+                              )}
+                            </div>
+              
+                            <div className="text-gray-300 leading-relaxed whitespace-pre-line text-sm sm:text-base tracking-wide">
+                              {projects[projectIndex].GitHubLink1 && (
+                                <a
+                                  href={projects[projectIndex].GitHubLink1}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                                >
+                                  View on GitHub(Frontend)
+                                </a>
+                              )}
+                            </div>
+              
+                            <div className="text-gray-300 leading-relaxed whitespace-pre-line text-sm sm:text-base tracking-wide">
+                              {projects[projectIndex].GitHubLink2 && (
+                                <a
+                                  href={projects[projectIndex].GitHubLink2}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                                >
+                                  View on GitHub(Backend)
+                                </a>
+                              )}
+                            </div>
+
             </div>
 
           </div>
