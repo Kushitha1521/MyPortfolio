@@ -169,8 +169,8 @@ Features
       image: "/crypto.png",
       technologies: ["React", "Node.js","Tailwind CSS","Vite", "WebSocket", "Python","Flask", "Azure", "GitHub","Binance API","Metirial-UI"],
       category: "web",
-      LinkedInLink:"",
-      GitHubLink1:"",
+      LinkedInLink:"https://www.linkedin.com/posts/kushitha-lakshitha_reactjs-mui-flask-activity-7342069925848457216-l301?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkaV0MB7CtGiDgsZMfEFKJrugJsTg0c5kU",
+      GitHubLink1:"https://github.com/Kushitha1521/crypto-signal-project",
       details:`02/2025-06/2025
       
       Built a live cryptocurrency trading dashboard with an integrated signal engine that analyzes market data using technical indicators such as MACD and RSI to generate real-time Buy/Sell signals from Binance. The system delivers continuous market insights through a responsive web interface and ensures reliable performance through cloud deployment on Microsoft Azure for real-time data streaming and processing.`,
