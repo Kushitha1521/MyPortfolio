@@ -120,7 +120,7 @@ const Medusa = () => {
                                   rel="noopener noreferrer"
                                   className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
                                 >
-                                  View on GitHub(Frontend)
+                                  View on GitHub
                                 </a>
                               )}
                             </div>

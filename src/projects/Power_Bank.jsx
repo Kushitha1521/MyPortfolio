@@ -119,20 +119,32 @@ const Power_Bank = () => {
                                   rel="noopener noreferrer"
                                   className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
                                 >
-                                  View on GitHub(Frontend)
+                                  View on GitHub
                                 </a>
                               )}
                             </div>
               
                             <div className="text-gray-300 leading-relaxed whitespace-pre-line text-sm sm:text-base tracking-wide">
-                              {projects[projectIndex].GitHubLink2 && (
+                              {projects[projectIndex].MediumLink && (
                                 <a
-                                  href={projects[projectIndex].GitHubLink2}
+                                  href={projects[projectIndex].MediumLink}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
                                 >
-                                  View on GitHub(Backend)
+                                  View on Medium
+                                </a>
+                              )}
+                            </div>
+                             <div className="text-gray-300 leading-relaxed whitespace-pre-line text-sm sm:text-base tracking-wide">
+                              {projects[projectIndex].ZenodoLink && (
+                                <a
+                                  href={projects[projectIndex].ZenodoLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                                >
+                                  View on Zenodo
                                 </a>
                               )}
                             </div>

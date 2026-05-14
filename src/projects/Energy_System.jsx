@@ -119,20 +119,20 @@ const Energy_System = () => {
                                   rel="noopener noreferrer"
                                   className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
                                 >
-                                  View on GitHub(Frontend)
+                                  View on GitHub
                                 </a>
                               )}
                             </div>
               
                             <div className="text-gray-300 leading-relaxed whitespace-pre-line text-sm sm:text-base tracking-wide">
-                              {projects[projectIndex].GitHubLink2 && (
+                              {projects[projectIndex].Huggingfacelink && (
                                 <a
-                                  href={projects[projectIndex].GitHubLink2}
+                                  href={projects[projectIndex].Huggingfacelink}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
                                 >
-                                  View on GitHub(Backend)
+                                  View on Huggingface
                                 </a>
                               )}
                             </div>
