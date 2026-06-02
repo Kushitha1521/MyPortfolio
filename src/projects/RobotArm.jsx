@@ -4,9 +4,9 @@ import { projects } from '../data/projects'
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-const NIC = () => {
+const RobotArm = () => {
 
-  const projectIndex = 9;
+  const projectIndex = 5;
   const navigate = useNavigate();
 
   return (
@@ -95,19 +95,6 @@ const NIC = () => {
                 {projects[projectIndex].details}
               </div>
 
-            </div>
-
-            {/* Category */}
-            <div className="mt-8 flex items-center gap-3">
-
-              <span className="text-gray-400 text-sm uppercase tracking-wider">
-                Category
-              </span>
-
-              <span className="bg-blue-600/20 border border-blue-500/20 text-blue-300 px-4 py-1 rounded-full text-sm">
-                {projects[projectIndex].category}
-              </span>
-
 
               {/* LinkedIn Link */}
                             <div><br></br></div>
@@ -153,6 +140,19 @@ const NIC = () => {
 
             </div>
 
+            {/* Category */}
+            <div className="mt-8 flex items-center gap-3">
+
+              <span className="text-gray-400 text-sm uppercase tracking-wider">
+                Category
+              </span>
+
+              <span className="bg-blue-600/20 border border-blue-500/20 text-blue-300 px-4 py-1 rounded-full text-sm">
+                {projects[projectIndex].category}
+              </span>
+
+            </div>
+
           </div>
 
         </div>
@@ -164,4 +164,4 @@ const NIC = () => {
   )
 }
 
-export default NIC
+export default RobotArm

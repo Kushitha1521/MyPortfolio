@@ -1030,6 +1030,7 @@ const handleFormSubmit = async (e) => {
                 { id: 'Digital Design', label: 'Digital Design' },
                  { id: 'Electronics', label: 'Electronics' },
                  { id: 'Embedded Systems', label: 'Embedded Systems' },
+                 { id: 'Robotics', label: 'Robotics' }
               ].map(tab => (
                 <button
                   key={tab.id}

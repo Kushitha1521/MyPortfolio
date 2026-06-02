@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const C_Chat = () => {
 
-  const projectIndex = 7;
+  const projectIndex = 8;
   const navigate = useNavigate();
 
   return (
@@ -119,7 +119,7 @@ const C_Chat = () => {
                                   rel="noopener noreferrer"
                                   className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
                                 >
-                                  View on GitHub(Frontend)
+                                  View on GitHub
                                 </a>
                               )}
                             </div>

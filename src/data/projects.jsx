@@ -151,6 +151,26 @@ Features
       `,
     },
     {
+      name: "6 DOF 3D Robot Arm with Fusion 360", 
+      slug: "robot-arm",
+      description: "Design and simulation of a 6 DOF 3D robot arm using Fusion 360",
+      image: "/robot-arm.png",
+      technologies: ["Fusion 360", "SolidWorks", "CNC Machining", "3D Printing"],
+      category: "Robotics",
+      GitHubLink1:"https://github.com/Kushitha1521/Robot-Arm",
+      LinkedInLink:"https://www.linkedin.com/posts/kushitha-lakshitha_robotics-fusion360-cad-ugcPost-7464303110702907392-cO20/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkaV0MB7CtGiDgsZMfEFKJrugJsTg0c5kU",
+      details:`05/2026-06/2026
+      This project involved the complete CAD modeling and assembly design process, focusing on joint articulation, motion mechanisms, and end-effector integration. The robotic arm includes a gripper mechanism and was animated to visualize movement and functionality.
+
+Key features:
+⚙️ 6 Degrees of Freedom (6-DOF)
+🦾 Gripper end effector
+🎥 Motion animation & assembly visualization
+🛠️ Mechanical assembly design in Fusion 360
+
+This project helped strengthen my skills in robotics design, CAD modeling, and mechanical system development. Looking forward to extending this design with electronics, control systems, and embedded integration.
+      ` },
+    {
       name: "Anti-virus software (MEDUSA)", 
       slug: "medusa",
       description: "Anti-virus software with real-time protection and malware detection",
@@ -182,8 +202,8 @@ Features
       image: "/student_attendance.png",
       technologies: ["Java","GitHub","IntelliJ IDEA","NetBeans"],
       category: "Desktop Application",
-      GitHubLink1:"",
-      details:"",
+      GitHubLink1:"https://github.com/Kushitha1521/Student-Attendance-System",
+      details:"Student Attendance System is a Java-based desktop application designed to help lecturers manage student attendance efficiently. The system provides a user-friendly graphical interface for recording and tracking attendance, allowing lecturers to easily mark students as present, absent, or late. It also offers features for generating attendance reports and maintaining student records, streamlining the process of attendance management in educational institutions.",
     },
     {
       name: "C Chat", 
@@ -192,8 +212,8 @@ Features
       image: "/c_chat.png",
       technologies: ["C", "Linux", "GitHub"],
       category: "Desktop Application",
-      GitHubLink1:"",
-      details:"",
+      GitHubLink1:"https://github.com/Kushitha1521/C-Chat",
+      details:"C Chat is a simple command-line chat application developed in C using socket programming for network communication. The application allows multiple users to connect and exchange messages in real-time over a local network. It demonstrates basic client-server architecture, enabling users to send and receive messages through a terminal interface, making it a practical example of network programming in C.",
     },
     
     {
@@ -203,8 +223,8 @@ Features
       image: "/nic.png",
       technologies: ["python","GitHub"],
       category: "Desktop Application",
-      GitHubLink1:"",
-      details:"",
+      GitHubLink1:"https://github.com/Kushitha1521/enterNIC",
+      details:"Python project(NIC)- It developed in my A/L times. When we input the NIC no of any person, we can get detail of the that person such as birthdate, gender, age. NIC mean National Identity Card",
     },
     
   ];
