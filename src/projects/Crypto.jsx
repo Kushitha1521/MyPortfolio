@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const Crypto = () => {
 
-  const projectIndex = 6;
+  const projectIndex = 7;
   const navigate = useNavigate();
 
   return (

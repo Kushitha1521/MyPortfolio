@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const Medusa = () => {
 
-  const projectIndex = 5;
+  const projectIndex = 6;
   const navigate = useNavigate();
 
   return (

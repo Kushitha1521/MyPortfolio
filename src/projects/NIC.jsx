@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const NIC = () => {
 
-  const projectIndex = 9;
+  const projectIndex = 10;
   const navigate = useNavigate();
 
   return (

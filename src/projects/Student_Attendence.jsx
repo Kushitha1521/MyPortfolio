@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const Student_Attendence = () => {
 
-  const projectIndex = 7;
+  const projectIndex = 8;
   const navigate = useNavigate();
 
   return (
